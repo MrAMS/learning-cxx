@@ -7,7 +7,10 @@ constexpr unsigned long long fibonacci(int i) {
         case 1:
             return 1;
         default:
-            return fibonacci(i - 1) + fibonacci(i - 2);
+            auto k = (i+1)/2;
+            auto kk = fibonacci(k);
+            auto kk1 = fibonacci(k-1);
+            return i%2==0?((2*kk1+kk) * kk) : (kk*kk+kk1*kk1);
     }
 }
 
